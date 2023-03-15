@@ -82,6 +82,12 @@ createApp({
             return 'active';
         }
          return '';
+    },
+    autoplay(){
+        setInterval(this.gotoNext, 3000);
     }
+  },
+  mounted(){
+    this.autoplay();
   }
 }).mount('#app')
