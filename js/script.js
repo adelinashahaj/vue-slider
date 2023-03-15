@@ -33,6 +33,7 @@ createApp({
   data() {
     return {
         activeImage: 0,
+        time: 0,
         slides: [
             {
              image: 'img/01.webp',
@@ -84,10 +85,16 @@ createApp({
          return '';
     },
     autoplay(){
-        setInterval(this.gotoNext, 3000);
+        this.timer= setInterval(this.gotoNext, 3000);
+    },
+    resetAutoplay(){
+        clearInterval(this.timer);
+        this.autoplay();
     }
+    
   },
   mounted(){
     this.autoplay();
   }
+  
 }).mount('#app')
