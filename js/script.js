@@ -63,15 +63,25 @@ createApp({
     gotoPrev(){
         this.activeImage--;
         if(this.activeImage < 0) {
-            this.activeImage = this.slides.image.length - 1;
+            this.activeImage = this.slides.length - 1;
         }
     },
     gotoNext(){
         this.activeImage++;
-        if (this.activeImage == this.slides.image.length ){
+        if (this.activeImage == this.slides.length ){
             this.activeImage = 0;
 
         }
+    },
+    changeImage(newActiveImage){
+        this.activeImage = newActiveImage;
+
+    },
+    getActiveClass(index){
+        if (index == this.activeImage){
+            return 'active';
+        }
+         return '';
     }
   }
 }).mount('#app')
