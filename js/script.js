@@ -87,10 +87,11 @@ createApp({
     autoplay(){
         this.timer= setInterval(this.gotoNext, 3000);
     },
-    resetAutoplay(){
+    stopAutoplay(){
         clearInterval(this.timer);
-        this.autoplay();
-    }
+        this.timer= 0;
+    },
+   
     
   },
   mounted(){
